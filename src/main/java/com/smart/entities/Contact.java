@@ -17,7 +17,7 @@ public class Contact {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long contactId;
 	private String name;
-	private String nickName;
+	private String secondName;
 	private String work;
 	private String email;
 	private String imageUrl;
@@ -42,10 +42,10 @@ public class Contact {
 		this.name = name;
 	}
 	public String getNickName() {
-		return nickName;
+		return secondName;
 	}
 	public void setNickName(String nickName) {
-		this.nickName = nickName;
+		this.secondName = nickName;
 	}
 	public String getWork() {
 		return work;
@@ -76,6 +76,12 @@ public class Contact {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	@Override
+	public String toString() {
+		return "Contact [contactId=" + contactId + ", name=" + name + ", secondName=" + secondName + ", work=" + work
+				+ ", email=" + email + ", imageUrl=" + imageUrl + ", description=" + description + ", phone=" + phone
+				+ ", user=" + user + "]";
 	}
 	
 }

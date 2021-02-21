@@ -32,18 +32,19 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto text-uppercase">
-														
-					 <li class="nav-item active"><a th:href="@{/smartcontactmanager/home}" class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span></a>
-				    </li>
-				    				    
-					 <li class="nav-item active"><a class="nav-link" href="#">About</a></li>
-					 					 
-					 <li class="nav-item active"><a class="nav-link" th:href="@{/smartcontactmanager/signin}">Login</a> </li>
-					 
-					  <li class="nav-item active"><a  class="nav-link" th:href="@{/smartcontactmanager/signup}"  
-					  href="#">SignUp</a> </li>
-					 					 					 
+			
+				<li class="nav-item active"><a class="nav-link" th:href="@{/smartcontactmanager/}" href="#">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				
+				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+				
+				
+				<li class="nav-item"><a class="nav-link disabled" href="#"
+					tabindex="-1" aria-disabled="true">Login</a></li>
+					
+				<li class="nav-item"><a class="nav-link" th:href="@{/smartcontactmanager/signup/}" href="#"
+					tabindex="-1" aria-disabled="true">Sign Up</a></li>
 			</ul>
 
 		</div>

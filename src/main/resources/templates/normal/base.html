@@ -13,6 +13,11 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+	integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+	crossorigin="anonymous" />
+
 <!-- this is the external CSS we are using -->
 <link rel="Stylesheet" th:href="@{/css/style.css}">
 
@@ -21,7 +26,7 @@
 <body>
 	<!-- navbar -->
 
-	<nav class="navbar navbar-expand-lg navbar-dark ">
+	<nav class="fixed-top navbar navbar-expand-lg navbar-dark ">
 		<a class="navbar-brand" href="#">Smart Contact Manager</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -32,18 +37,18 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto text-uppercase">
-														
-					 <li class="nav-item active"><a th:href="@{/smartcontactmanager/home}" class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span></a>
-				    </li>
-				    				    
-					 <li class="nav-item active"><a class="nav-link" href="#">About</a></li>
-					 					 
-					 <li class="nav-item active"><a class="nav-link" th:href="@{/smartcontactmanager/signin}">Login</a> </li>
-					 
-					  <li class="nav-item active"><a  class="nav-link" th:href="@{/smartcontactmanager/signup}"  
-					  href="#">SignUp</a> </li>
-					 					 					 
+
+				<li class="nav-item active"><a
+					th:href="@{/smartcontactmanager/home}" class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+
+				<li class="nav-item active"><a class="nav-link" href="#"> <span
+						th:text="${user.name}"></span></a></li>
+
+				<li class="nav-item active"><a class="nav-link"
+					th:href="@{/logout}" tabindex="-1" aria-disabled="true" href="#">Logout</a>
+				</li>
 			</ul>
 
 		</div>
@@ -51,8 +56,40 @@
 
 	<!-- End of nav bar -->
 
-	<!--  this is the dynamic content generated from the other pages. -->
-	<div th:replace="${content}"></div>
+	<!--  this is the dynamic content generated from the other pages.  this has 2 parts.
+	      1.side bar
+	      2.content of page-->
+	<!-- 1. sideBar -->
+	
+	<div class="sidebar mt-2">
+	
+	    <span  onclick="togglesidebar()" class="crossBtn">&times;</span>
+
+		 <a href="#" th:href="@{/smartcontactmanager/users/index}" class="item"> <i class="fas fa-home"></i> Home</a>
+		 <a href="#" class="item"> <i class="fas fa-address-book"></i> View contacts</a>  
+		 <a href="#" th:href="@{/smartcontactmanager/users/add-contact}" class="item"> <i class="fas fa-pen"></i> Add contacts</a> 
+		 <a href="#" class="item"> <i class="fas fa-user"></i> Your Profile</a>
+		 <a href="#" class="item"> <i class="fas fa-cog"></i> Settings</a>
+		 <a href="#" th:href="@{/logout}" class="item"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+		 
+	<div class="divider"></div>
+
+	</div>
+	<!-- end of side bar -->
+
+
+
+	<!-- content part -->
+	<div class="content mt-5">
+	
+	    <i  onclick="togglesidebar()" class="fas fa-bars m-3"></i> 
+
+		<div th:replace="${content}"></div>
+
+	</div>
+	<!-- end of content -->
+
+
 
 
 	<!-- Optional JavaScript; choose one of the two! -->
