@@ -39,7 +39,7 @@
 
 									</div>
 
-									<input type="text" id="firstName" name="name"
+									<input required type="text" id="firstName" name="name"
 										placeholder="Enter name here" class="form-control" />
 
 								</div>
@@ -76,7 +76,7 @@
 
 									</div>
 
-									<input type="number" id="phone" name="phone"
+									<input required maxlength="13"  type="text" id="phone" name="phone"
 										placeholder="Enter Phone number here" class="form-control" />
 
 								</div>
@@ -90,7 +90,7 @@
 
 									</div>
 
-									<input type="email" id="email" name="email"
+									<input required type="email" id="email" name="email"
 										placeholder="Enter email here" class="form-control" />
 
 								</div>
@@ -108,7 +108,7 @@
 
 									</div>
 
-									<input type="text" id="work" name="work"
+									<input required type="text" id="work" name="work"
 										placeholder="Enter work here" class="form-control" />
 
 								</div>
@@ -117,21 +117,19 @@
 
 								<div class="form-group mt-3">
 
-									<textarea placeholder="enter your description"
-										name="description" id="description" class="form-control"
+									<textarea placeholder="Enter contact description"
+										name="description" id="mytextarea" class="form-control"
 										rows="10"></textarea>
 
 								</div>
 
 								<!-- contact image -->
 								<div class="cutom-file">
-									<input type="file" name="profile image" />
-
+									<input type="file" name="profileImage" />
 								</div>
+								
 								<div class="container text-center mt-3">
 									<button class="btn text-white ">Save Contact</button>
-									</button>
-
 								</div>
 
 							</form>
@@ -146,7 +144,12 @@
 
 		</div>
 
-
+         <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+         <script>
+			      tinymce.init({
+			        selector: '#mytextarea'
+			      });
+        </script>
 
 
 

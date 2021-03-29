@@ -6,10 +6,12 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
+		 <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.smart</groupId>
 	<artifactId>smartcontactmanager</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SmartContactManager</name>
 	<description>first spring boot project</description>
@@ -29,6 +31,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+     </dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
 			<dependency>
@@ -67,9 +75,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-war-plugin</artifactId>
+			  <version>3.3.1</version>
+			  <type>maven-plugin</type>
+       </dependency>
 	</dependencies>
 
 	<build>
+	<finalName>SCM</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

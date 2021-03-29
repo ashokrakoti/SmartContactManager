@@ -49,15 +49,12 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/smartcontactmanager/admin/**").hasRole("ADMIN")
-				.antMatchers("/smartcontactmanager/users/**").hasRole("USER").antMatchers("/**").permitAll().and().formLogin()
+		http.authorizeRequests()
+		        .antMatchers("/smartcontactmanager/admin/**").hasRole("ADMIN")
+				.antMatchers("/smartcontactmanager/users/**").hasRole("USER")
+				.antMatchers("/**").permitAll().and().formLogin()
 				.loginPage("/smartcontactmanager/signin")
 				.defaultSuccessUrl("/smartcontactmanager/users/index")
 				.and().csrf().disable();
 	}
-	 
-	
-	
-	
-
 }
