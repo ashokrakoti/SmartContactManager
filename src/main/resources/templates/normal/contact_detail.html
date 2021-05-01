@@ -69,8 +69,11 @@
 						</div>
 					
 					<div class="container mt-3">
-					       <button class="btn btn-danger btn-sm btn-block">Delete</button>
-					       <button class="btn btn-primary btn-sm btn-block">Update</button>
+					       <a th:href="@{'/smartcontactmanager/users/delete-contact/'+ ${contact.contactId}}" class="btn btn-danger btn-sm btn-block">Delete</a>
+					      <!--  <button class="btn btn-primary btn-sm btn-block">Update</button> -->
+					      <form method="post" th:action="@{'/smartcontactmanager/users/update-contact/'}+ ${contact.contactId}" class="mt-2">
+						    	   <button type="submit" class="btn btn-primary btn-sm btn-block">Update</button>
+						    	</form>
 					</div>	
 
 				</div>

@@ -99,7 +99,10 @@ public class Contact {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+ 
+	public boolean equals(Object obj) {
+		return this.contactId==((Contact) obj).getContactId();
+	}
 	/*
 	 * @Override public String toString() { return "Contact [contactId=" + contactId
 	 * + ", name=" + name + ", secondName=" + secondName + ", work=" + work +
